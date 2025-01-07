@@ -19,8 +19,10 @@ function AddNote() {
     editButton.textContent = " Edit "
 
     editButton.onclick = function createTextField () {
-        editField.innerHTML =  ` <input type="text" id="TextField"><br><br>`
+        editField.innerHTML =  ` <input type="text" value= ${TextField.value} id="TextField"><br><br>`
       }
+
+
     //Boton de eliminar
     const deleteButton = document.createElement('button')
     deleteButton.id = "deleteButton"
@@ -28,6 +30,7 @@ function AddNote() {
 
     deleteButton.onclick = function () {
         container.removeChild(label)
+        label.removeChild(editButton)
        }
 
     
@@ -40,8 +43,6 @@ function AddNote() {
         alert("The text field is empty")
         document.removeChild(label)
     }
-    
-  
     
     container.appendChild(label);
     TextField.value = ""

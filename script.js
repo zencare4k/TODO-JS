@@ -3,7 +3,6 @@ const container = document.getElementById("checkboxcontainer");
 const emptymessage = document.getElementById("emptymessage")
 function AddNote() {
     
-
     const editFieldContainer = document.getElementById("editFieldContainer")
     const input = document.createElement('input')
     input.type = 'checkbox'
@@ -34,7 +33,7 @@ function AddNote() {
         
         editFieldContainer.appendChild(textField)
         editFieldContainer.appendChild(confirmButton)
-
+        //Funcion de confirmar edicion
         confirmButton.onclick = function () {
             if (confirm("Are you sure?")) {
                 alert("Action confirmed")
@@ -52,7 +51,7 @@ function AddNote() {
     deleteButton.id = "deleteButton"
     deleteButton.textContent = " Delete "
     
-    //Funcion de eliminar nota
+    //Funcion de confirmar eliminacion
     deleteButton.onclick = function () {
         if (confirm("Are you sure?")) {
             alert("Action confirmed")
@@ -65,10 +64,8 @@ function AddNote() {
 
         }
        
-        
        }
 
- 
     if (TextField.value === "") {
         alert("The text field is empty")
         document.removeChild(label)

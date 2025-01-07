@@ -36,7 +36,8 @@ function AddNote() {
         confirmButton.onclick = function () {
             if (confirm("Are you sure?")) {
                 alert("Action confirmed")
-            label.textContent = textField.value
+            
+            localStorage.setItem( label.textContent = textField.value)
             }else{
                 alert("Action Denied")
 
@@ -70,10 +71,17 @@ function AddNote() {
         document.removeChild(label)
     }
 
-    label.appendChild(input)
-    container.appendChild(label);
-    container.appendChild(editButton)
-    container.appendChild(deleteButton)
+const appendChild = [    container.appendChild(label),
+    container.appendChild(input),
+    container.appendChild(editButton),
+    container.appendChild(deleteButton)]
+
+  const local = localStorage.setItem("Tasks", JSON.stringify(appendChild))
+
+
+  JSON.parse(localStorage.getItem("Tasks"));
+
+
     TextField.value = ""
 
 

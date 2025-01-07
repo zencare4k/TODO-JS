@@ -12,8 +12,9 @@ table{
     text-align: center;
     margin: auto;
     border-radius: 10px;
-    margin-top: 65px;
+    margin-top: -20px;
     box-shadow: 2px 2px 7px #9b9b9b;
+    background-color: white;
 }
 
 
@@ -38,7 +39,7 @@ body {
 
 header{
     height: 200px;
-    background-image: url(images.jpeg);
+    background-image: url(background.jpg);
     background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,7 +55,7 @@ h1{
     padding-top: 20px;
     text-align: center;
     padding-bottom: 20px;
-    margin-top: 65px;
+    margin-top: -20px;
     border-radius: 10px;
     width: 500px;
     border-color: white;
@@ -63,8 +64,4 @@ h1{
 button{
 
     text-align: justify;
-}
-
-#editbutton{
-    width: 20px;
 }

@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO List</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>TODO LIST</h1>
 
   <div id="Form">
-    <input type = "text" id="TextField"> <br> <br>
-    <input id = "addnote" type="button" value="Add Note" onclick="AddNote()">
+    <input type="text" id="TextField" placeholder="Enter a note"><br><br>
+    <input id="addnote" type="button" value="Add Note" onclick="AddNote()">
   </div>
 
-  <p id="List">No notes yet.</p>
+  <div id="checkboxcontainer">
+    <p id="emptymessage">No notes yet</p>
+  </div>
 </body>
 </html>

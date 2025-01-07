@@ -4,13 +4,13 @@ const emptymessage = document.getElementById("emptymessage")
 function AddNote() {
     
 
-    const editField = document.getElementById("editFieldContainer")
+    const editFieldContainer = document.getElementById("editFieldContainer")
     const input = document.createElement('input')
     input.type = 'checkbox'
 
     const label = document.createElement('label')
+    label.value = TextField.value
     label.textContent = TextField.value
-
 
 
     //Boton de editar
@@ -18,27 +18,43 @@ function AddNote() {
     editButton.id = "editButton"
     editButton.textContent = " Edit "
 
-    editButton.onclick = function createTextField () {
-        editField.innerHTML =  ` <input type="text" value= ${TextField.value} id="TextField"><br><br>`
-      }
+    editButton.onclick = function () {
 
+        //Campo de texto 
+        const textField = document.createElement('input')
+        textField.type = "text"
+        textField.value = label.value
+
+        //Boton de Confirmar
+        const confirmButton = document.createElement('button')
+        confirmButton.id = "confirmButton"
+        confirmButton.textContent = " Confirm "
+        
+        textField.appendChild(confirmButton)
+        
+        editFieldContainer.appendChild(textField)
+        editFieldContainer.appendChild(confirmButton)
+        confirmButton.onclick = function () {
+             textField.textContent = label.value 
+       }
+        
+      }
 
     //Boton de eliminar
     const deleteButton = document.createElement('button')
     deleteButton.id = "deleteButton"
     deleteButton.textContent = " Delete "
-
+    
+    //Funcion de eliminar nota
     deleteButton.onclick = function () {
         container.removeChild(label)
         label.removeChild(editButton)
        }
 
-    
-
     label.appendChild(input);
     label.appendChild(editButton)
     label.appendChild(deleteButton)
-
+    
     if (TextField.value === "") {
         alert("The text field is empty")
         document.removeChild(label)
@@ -46,6 +62,7 @@ function AddNote() {
     
     container.appendChild(label);
     TextField.value = ""
+
 
 
 }

@@ -1,3 +1,17 @@
-#checkboxcontainer{
+#checkboxcontainer label{
     display: block;
+    margin: 20px;
+    
+}
+body{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+button, input{
+
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+
+}
+
+button:hover{
+    animation:reverse;
 }

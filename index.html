@@ -8,17 +8,29 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+   <header>
     <h1>TODO LIST</h1>
+    <div id="Form">
+        <input type="text" id="TextField" placeholder="Create a new todo..."><br><br>
+        <input id="addnote" type="button" value="Add Note" onclick="AddNote()">
+      </div>
+   </header>
 
-  <div id="Form">
-    <input type="text" id="TextField" placeholder="Enter a note"><br><br>
-    <input id="addnote" type="button" value="Add Note" onclick="AddNote()">
-  </div>
 
-  <div id="checkboxcontainer">
-  </div>
 
-  <div id="editFieldContainer">
-  </div>
+ <table>
+    <tr>
+        <td>
+            <div id="checkboxcontainer">
+            </div>
+        </td>
+        <td>
+            <div id="editFieldContainer">
+            </div>
+        </td>
+    </tr>
+  
+    
+ </table>
 </body>
 </html>

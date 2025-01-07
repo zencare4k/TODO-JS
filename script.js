@@ -6,7 +6,7 @@ function AddNote() {
     const editFieldContainer = document.getElementById("editFieldContainer")
     const input = document.createElement('input')
     input.type = 'checkbox'
-
+    input.id = 'checkbox'
     const label = document.createElement('label')
     label.value = TextField.value
     label.textContent = TextField.value
@@ -15,7 +15,6 @@ function AddNote() {
     //Boton de editar
     const editButton = document.createElement('button')
     editButton.id = "editButton"
-    editButton.textContent = " Edit "
 
     editButton.onclick = function () {
 
@@ -49,13 +48,13 @@ function AddNote() {
     //Boton de eliminar
     const deleteButton = document.createElement('button')
     deleteButton.id = "deleteButton"
-    deleteButton.textContent = " Delete "
+    deleteButton.textContent = ""
     
     //Funcion de confirmar eliminacion
     deleteButton.onclick = function () {
         if (confirm("Are you sure?")) {
             alert("Action confirmed")
-            container.removeChild(input)
+            label.removeChild(input)
             container.removeChild(label)
             container.removeChild(editButton)
             container.removeChild(deleteButton)
@@ -65,13 +64,13 @@ function AddNote() {
         }
        
        }
-
+    //Limpiar campo de texto 
     if (TextField.value === "") {
         alert("The text field is empty")
         document.removeChild(label)
     }
 
-    container.appendChild(input)
+    label.appendChild(input)
     container.appendChild(label);
     container.appendChild(editButton)
     container.appendChild(deleteButton)

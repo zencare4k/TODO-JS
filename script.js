@@ -36,8 +36,13 @@ function AddNote() {
         editFieldContainer.appendChild(confirmButton)
 
         confirmButton.onclick = function () {
-
+            if (confirm("Are you sure?")) {
+                alert("Action confirmed")
             label.textContent = textField.value
+            }else{
+                alert("Action Denied")
+
+            }
        }
         
       }
@@ -49,8 +54,18 @@ function AddNote() {
     
     //Funcion de eliminar nota
     deleteButton.onclick = function () {
-        container.removeChild(label)
-        label.removeChild(editButton)
+        if (confirm("Are you sure?")) {
+            alert("Action confirmed")
+            container.removeChild(input)
+            container.removeChild(label)
+            container.removeChild(editButton)
+            container.removeChild(deleteButton)
+        }else{
+            alert("Action Denied")
+
+        }
+       
+        
        }
 
  

@@ -34,8 +34,10 @@ function AddNote() {
         
         editFieldContainer.appendChild(textField)
         editFieldContainer.appendChild(confirmButton)
+
         confirmButton.onclick = function () {
-             textField.textContent = label.value 
+
+            label.textContent = textField.value
        }
         
       }
@@ -51,16 +53,16 @@ function AddNote() {
         label.removeChild(editButton)
        }
 
-    label.appendChild(input);
-    label.appendChild(editButton)
-    label.appendChild(deleteButton)
-    
+ 
     if (TextField.value === "") {
         alert("The text field is empty")
         document.removeChild(label)
     }
-    
+
+    container.appendChild(input)
     container.appendChild(label);
+    container.appendChild(editButton)
+    container.appendChild(deleteButton)
     TextField.value = ""
 
 

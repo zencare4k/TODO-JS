@@ -2,6 +2,7 @@ const TextField = document.getElementById("TextField");
 const container = document.getElementById("checkboxcontainer");
 const emptymessage = document.getElementById("emptymessage")
 function AddNote() {
+    const tasks = JSON.parse(localStorage.getItem("Tasks")) || []
     
     const editFieldContainer = document.getElementById("editFieldContainer")
     const input = document.createElement('input')
@@ -55,7 +56,7 @@ function AddNote() {
     deleteButton.onclick = function () {
         if (confirm("Are you sure?")) {
             alert("Action confirmed")
-            label.removeChild(input)
+            container.removeChild(input)
             container.removeChild(label)
             container.removeChild(editButton)
             container.removeChild(deleteButton)
@@ -68,22 +69,19 @@ function AddNote() {
     //Limpiar campo de texto 
     if (TextField.value === "") {
         alert("The text field is empty")
-        document.removeChild(label)
+        return
     }
+    const Tasks = [ label,
+    input,
+     editButton,
+     deleteButton] 
+     
+  localStorage.setItem("Tasks", JSON.stringify(Tasks))
+ const task = JSON.parse(localStorage.getItem("Tasks"))
 
-const appendChild = [    container.appendChild(label),
-    container.appendChild(input),
-    container.appendChild(editButton),
-    container.appendChild(deleteButton)]
-
-  const local = localStorage.setItem("Tasks", JSON.stringify(appendChild))
-
-
-  JSON.parse(localStorage.getItem("Tasks"));
-
-
-    TextField.value = ""
-
-
-
+    task.forEach(element => {
+        const container = document.getElementById("checkboxcontainer")
+        container.appendChild(element)
+    });
 }
+
